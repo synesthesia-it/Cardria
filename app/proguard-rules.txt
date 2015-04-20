@@ -1,0 +1,100 @@
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in E:/Program Files (x86)/Android/android-studio/sdk/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+
+#WARNING
+-dontwarn com.squareup.picasso.**
+-dontwarn retrofit.**
+-dontwarn javax.xml.stream.**
+-dontwarn org.xmlpull.**
+-dontwarn com.squareup.**
+-dontwarn net.htmlparser.jericho.**
+-dontwarn com.parse.**
+-dontwarn com.facebook.**
+-dontwarn okio.**
+-dontwarn com.google.**
+-dontwarn rx.**
+-dontwarn com.qualcomm.**
+-dontwarn com.ti.s3d.**
+-dontwarn com.google.protobuf.**
+
+#LIBRERIE
+-keep class com.google.** { *; }
+-keep class retrofit.** { *; }
+-keep class com.j256.** { *; }
+-keep class de.greenrobot.**  { *; }
+-keep class org.simpleframework.xml.**  { *; }
+-keep class org.xmlpull.**  { *; }
+-keep class javax.xml.stream.**  { *; }
+-keep class com.facebook.**  { *; }
+-keep class org.apache.harmony.xnet.provider.jsse.**  { *; }
+-keep class com.stanfy.** { *; }
+-keep class se.emilsjolander.** { *; }
+-keep class com.mobprofs.** { *; }
+-keep class com.squareup.** { *; }
+-keep interface com.squareup.** { *; }
+-keep class com.crashlytics.android.** { *; }
+-keep class com.throrinstudio.android.common.libs.validator.** { *; }
+-keep class io.vov.vitamio.** { *; }
+-keep class org.jsoup.** { *; }
+-keep class com.parse.** { *; }
+-keep class com.facebook.** { *; }
+
+
+
+-keep class com.qualcomm.** { *; }
+-keep class com.ti.s3d.** { *; }
+-keep class com.google.vrtoolkit.** { *; }
+-keep class com.google.protobuf.** { *; }
+
+# REFLECT OTTO BUS
+-keepclassmembers class ** {
+    @com.squareup.otto.Subscribe public *;
+    @com.squareup.otto.Produce public *;
+}
+
+-keepclasseswithmembers class * {
+    @retrofit.http.* <methods>;
+}
+
+##---------------Begin: proguard configuration for Gson  ----------
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+
+# Application classes that will be serialized/deserialized over Gson
+-keep class com.google.gson.examples.android.model.** { *; }
+
+
+##---------------End: proguard configuration for Gson  ----------
+
+
+###PROVE
+#-keepclassmembers class com.sebach.sebachandroid.models.** {
+#     public <fields>;
+#}
+
+
+-keepclassmembers class name.cpr.VideoEnabledWebView$JavascriptInterface { public *; }
