@@ -18,7 +18,7 @@ Developed By
 * Luca Piras - <luca.piras@synesthesia.it>
 * Andrea Lucibello - <andrea.lucibello@synesthesia.it>
 
-
+Talk slides available at https://speakerdeck.com/synesthesia/the-magic-box-google-cardboard
 
 License
 =======
